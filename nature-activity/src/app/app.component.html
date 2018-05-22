@@ -1,0 +1,91 @@
+
+<div class="container">
+    <app-header></app-header>
+  <router-outlet></router-outlet>
+</div>
+
+<!--
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="map">
+            <agm-map 
+            [latitude]="latStartPos" 
+            [longitude]="lngStartPos"
+            [zoom]="zoomLevel"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+            (mapClick)="mapClicked($event)">
+          
+              <agm-marker 
+              *ngFor='let m of markers; let i = index'
+              (markerClick)='clickedMarker(m, i)'
+              [latitude]="m.lat" 
+              [longitude]="m.lng"
+              [markerDraggable]="m.draggable"
+              (dragEnd)="markerDraggEnd(m, $event)">
+          
+              <agm-info-window>
+                <strong>{{m.name}}</strong>
+              </agm-info-window>
+              </agm-marker>
+            </agm-map><hr>
+          
+          <strong>Latitude: {{txtLat}}</strong>
+          <strong>Longitude: {{txtLat}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+
+<!--
+  <main role="main" class="container">
+  
+  
+  </main>
+-->
+<!--
+
+  <div style="text-align:center; background-color: gainsboro; color: rgb(37, 90, 189)">
+    <b>
+        <span>{{ title }}</span><br>
+        <span>{{titleDesciption}}</span>
+    </b><hr>
+    <img width="25%" alt="Activity logo" src="../assets/images/logo001.jpg">
+  
+    <div style="text-align:center; width: 50%; margin-left: 25%">
+      <agm-map 
+      [latitude]="latStartPos" 
+      [longitude]="lngStartPos"
+      [zoom]="zoomLevel"
+      [disableDefaultUI]="false"
+      [zoomControl]="false"
+      (mapClick)="mapClicked($event)">
+    
+        <agm-marker 
+        *ngFor='let m of markers; let i = index'
+        (markerClick)='clickedMarker(m, i)'
+        [latitude]="m.lat" 
+        [longitude]="m.lng"
+        [markerDraggable]="m.draggable"
+        (dragEnd)="markerDraggEnd(m, $event)"
+        >
+    
+        <agm-info-window>
+          <strong>{{m.name}}</strong>
+        </agm-info-window>
+      </agm-marker>
+      </agm-map>
+    </div>
+    
+    <strong>Latitude: {{txtLat}}</strong>
+    <strong>Longitude: {{txtLat}}</strong>
+  </div>
+  
+  
+  
+  
+
+-->  

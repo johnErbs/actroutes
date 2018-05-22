@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 bg-light">
+              <label>Titel</label>
+              <input type="text" placeholder="tilføj titel..." [(ngModel)]="fireBaseitem.title">
+        <div class="map">
+            <agm-map 
+            [latitude]="latStartPos" 
+            [longitude]="lngStartPos"
+            [zoom]="zoomLevel"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+            (mapClick)="mapClicked($event)">
+          
+              <agm-marker 
+              *ngFor='let m of markers; let i = index'
+              (markerClick)='clickedMarker(m, i)'
+              [latitude]="m.lat" 
+              [longitude]="m.lng"
+              [markerDraggable]="m.draggable"
+              (dragEnd)="markerDraggEnd(m, i, $event)">
+          
+              <agm-info-window>
+                <strong>{{m.name}}</strong>
+                <strong>{{m.description}}</strong>
+              </agm-info-window>
+              </agm-marker>
+            </agm-map><hr>
+
+            <ul class="list-group">
+              <li class="list-group-item bg-light text-light" *ngFor="let marker of markers; let i = index">
+                    <div class="input-group">
+                      <label class="form-control bg-primary text-light">Latitude:</label>
+                      <input class="form-control" type="text" readonly="true" value="{{marker.lat}}">
+                      <label class="form-control bg-primary text-light">Longitude:</label>
+                      <input class="form-control" type="text" readonly="true" value="{{marker.lng}}">
+                    </div>
+                    <div class="input-group">
+                      <label class="form-control bg-primary text-light">Navn</label>
+                      <input [ngModel]="markerName" (ngModelChange)="marker.name = $event" class="form-control" type="text"  placeholder="tilføj navn...">
+                      <label class="form-control bg-primary text-light">Beskrivelse</label>
+                      <textarea [ngModel]="markerDesc" (ngModelChange)="marker.description = $event" class="form-control" placeholder="tilføj beskrivelse..."></textarea>
+                    </div><hr>
+                    <button class="float-right btn btn-danger">Slet</button>
+              </li>
+              <button class="btn btn-success" (click)="Upload()">Gem</button>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+

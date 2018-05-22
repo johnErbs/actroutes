@@ -1,0 +1,104 @@
+
+<div *ngIf="activityroute?.length > 0; else noActivities">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="list-group bg-light"><br>
+        <h6 style="text-align: center">Aktivitets Ruter for naturoplevelser og overnatning</h6>
+        <div class="list-group-item" *ngFor="let activity of activityroute; let i = index">
+          <a class="btn btn-light text-primary input-group" [routerLink]="['/getroute', activity.id]">
+            <span>Rute nr: {{i+1}} &nbsp;&nbsp;&nbsp; Titel: {{activity.title}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--
+    (click)="GetRouteinfo(activity.title)
+    <ul *ngFor="let activity of activityroute">
+      <li>
+      </li>
+    </ul>
+    
+  -->
+</div>
+<ng-template #noActivities>
+  <hr>
+  <h5>Der er ingen aktivitets-ruter!</h5>
+  <h5>Indlæser Ruter!</h5>
+</ng-template>
+
+
+
+
+
+
+
+<div>
+  <ul *ngFor="let i of item">
+    <li>Title: {{i.titel}}</li>
+    <li>Point: {{i.markpoints}}</li>
+  </ul>
+</div>
+
+
+
+
+
+<!--
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <table class="table table-bg">
+          <tr>
+              <td>
+                <div class="input-field col s6">
+                  <label>ID</label>
+                  <input type="text" class="form-control" placeholder="id" [(ngModel)]="item.id" name="id">
+                </div>
+              </td>
+            </tr>
+            <tr>
+        <tr>
+          <td>
+            <div class="input-field col s6">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Din titel" [(ngModel)]="item.title" name="title">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-field col s6">
+              <label>Latitude</label>
+              <input type="text" class="form-control" placeholder="latitude" [(ngModel)]="item.lat" name="latitude">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-field col s6">
+              <label>Longitude</label>
+              <input type="text" class="form-control" placeholder="longitude" [(ngModel)]="item.lng" name="longitude">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-field col s6">
+              <label>Aktivitet</label>
+              <input type="text" class="form-control" placeholder="aktivitet" [(ngModel)]="item.activity" name="activity">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="submit" class="btn btn-primary">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+
+-->  
+

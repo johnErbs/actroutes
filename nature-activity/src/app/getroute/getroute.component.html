@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 bg-light">
+              <label>Rute: {{routeTitle}}</label><br>
+        <div class="map">
+            <agm-map 
+            [latitude]="latStartPos" 
+            [longitude]="lngStartPos"
+            [zoom]="zoomLevel"
+            [disableDefaultUI]="false"
+            [zoomControl]="false"
+            >
+          
+              <agm-marker 
+              *ngFor='let m of markers; let i = index'
+              [latitude]="m.lat" 
+              [longitude]="m.lng"
+              [markerDraggable]="m.draggable"
+              >
+          
+              <agm-info-window>
+                <strong>{{m.name}}</strong>
+                <strong>{{m.description}}</strong>
+              </agm-info-window>
+              </agm-marker>
+            </agm-map><hr>
+        </div>
+      </div>
+    </div>
+  </div>
