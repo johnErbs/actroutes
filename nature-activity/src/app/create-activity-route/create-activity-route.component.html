@@ -30,16 +30,16 @@
             <ul class="list-group">
               <li class="list-group-item bg-light text-light" *ngFor="let marker of markers; let i = index">
                     <div class="input-group">
-                      <label class="form-control bg-primary text-light">Latitude:</label>
-                      <input class="form-control" type="text" readonly="true" value="{{marker.lat}}">
-                      <label class="form-control bg-primary text-light">Longitude:</label>
-                      <input class="form-control" type="text" readonly="true" value="{{marker.lng}}">
+                      <label class="form-control bg-primary text-light listgroupFonts">Latitude:</label>
+                      <input class="form-control listgroupFonts" type="text" readonly="true" value="{{marker.lat}}">
+                      <label class="form-control bg-primary text-light listgroupFonts">Longitude:</label>
+                      <input class="form-control listgroupFonts" type="text" readonly="true" value="{{marker.lng}}">
                     </div>
                     <div class="input-group">
-                      <label class="form-control bg-primary text-light">Navn</label>
-                      <input [ngModel]="markerName" (ngModelChange)="marker.name = $event" class="form-control" type="text"  placeholder="tilføj navn...">
-                      <label class="form-control bg-primary text-light">Beskrivelse</label>
-                      <textarea [ngModel]="markerDesc" (ngModelChange)="marker.description = $event" class="form-control" placeholder="tilføj beskrivelse..."></textarea>
+                      <label class="form-control bg-primary text-light listgroupFonts">Navn</label>
+                      <input [ngModel]="markerName" (ngModelChange)="marker.name = $event" class="form-control listgroupFonts" type="text"  placeholder="tilføj navn...">
+                      <label class="form-control bg-primary text-light listgroupFonts" >Beskrivelse</label>
+                      <textarea [ngModel]="markerDesc" (ngModelChange)="marker.description = $event" class="form-control listgroupFonts" placeholder="tilføj beskrivelse..."></textarea>
                     </div><hr>
                     <button class="float-right btn btn-danger">Slet</button>
               </li>

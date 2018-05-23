@@ -13,4 +13,5 @@ const APP_Routes: Routes = [
     { path: 'getroute/:id', component: GetrouteComponent }
 ];
 
-export const routing = RouterModule.forRoot(APP_Routes);
+export const routing = RouterModule.forRoot(APP_Routes, { useHash: true});
+
